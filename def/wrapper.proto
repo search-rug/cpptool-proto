@@ -20,6 +20,7 @@ message Envelope {
         Var var = 8;
         ClassVar c_var = 9;
         TypeDefinition type = 10;
+        IsolatedContextDefinition iso_context = 11;
     }
 }
 
