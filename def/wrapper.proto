@@ -2,11 +2,11 @@ syntax = "proto2";
 package ct.proto;
 option java_package = "nl.rug.search.proto";
 
-import "base.proto"; //TypeDefinition
+import "base.proto"; //TypeDefinition, IsolatedContextDefinition
 import "vars.proto"; //Var, ClassVar
 import "funcs.proto"; //FunctionDef, ClassFunctionDef
 import "classes.proto"; //RecordDef, EnumDef, CxxRecordDef
-import "misc.proto"; //IncludeRelation, TypeDef
+import "misc.proto"; //IncludeRelation, TypeDef, FriendRelation
 
 message Envelope {
     oneof content {
@@ -21,6 +21,7 @@ message Envelope {
         ClassVar c_var = 9;
         TypeDefinition type = 10;
         IsolatedContextDefinition iso_context = 11;
+        FriendRelation friend = 12;
     }
 }
 

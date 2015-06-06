@@ -13,3 +13,12 @@ message TypeDef {
     required ScopedName name = 1;
     required Type mappedType = 2;
 }
+
+message FriendRelation {
+    required Type origin = 1;
+    
+    oneof variation {
+        ScopedName friend = 2;
+        Type type_friend = 3;
+    }
+}
