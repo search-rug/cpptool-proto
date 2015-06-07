@@ -23,6 +23,7 @@ repositories {
 }
 
 protocDep = "com.google.protobuf:protoc:$proto_version"
+generatedFileDir = "${projectDir}/src"
 
 dependencies {
     compile "com.google.protobuf:protobuf-java:$proto_version"
