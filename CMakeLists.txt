@@ -11,6 +11,7 @@ set(PROTO_DEFS
     def/vars.proto
     def/funcs.proto
     def/classes.proto
+    def/tmpl.proto
 	def/base.proto
     )
 

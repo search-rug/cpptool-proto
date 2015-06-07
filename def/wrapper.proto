@@ -7,6 +7,7 @@ import "vars.proto"; //Var, ClassVar
 import "funcs.proto"; //FunctionDef, ClassFunctionDef
 import "classes.proto"; //RecordDef, EnumDef, CxxRecordDef
 import "misc.proto"; //IncludeRelation, TypeDef, FriendRelation
+import "tmpl.proto"; //TemplateParam, Template
 
 message Envelope {
     oneof content {
@@ -22,6 +23,8 @@ message Envelope {
         TypeDefinition type = 10;
         IsolatedContextDefinition iso_context = 11;
         FriendRelation friend = 12;
+        Template tmpl = 13;
+        TemplateParam tmpl_param = 14;
     }
 }
 

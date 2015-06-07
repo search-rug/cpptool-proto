@@ -2,8 +2,26 @@ syntax = "proto2";
 package ct.proto;
 option java_package = "nl.rug.search.proto";
 
-//TODO: template definitions
+import "base.proto";
 
-//Map template token types ("T") to the class/function that owns them
+message TemplateParam {
+    required Type own_type = 1;
+    
+    oneof owner {
+        Type owner_type = 2;
+        
+        ScopedName owner_name = 3;
+    }
+}
 
-//If a specialization is created, map it to the class/function that owns it
+// Marks the attached type/name as a template
+message Template {
+    oneof attached_to {
+        Type attached_type = 1;
+        
+        ScopedName attached_name = 2;
+    }
+    
+    // All the types which have been used in specializations of this template
+    repeated Type specializations = 3;
+}
