@@ -1,0 +1,29 @@
+apply plugin: 'com.google.protobuf'
+
+buildscript {
+    ext.proto_version = '2.6.1'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.4.1'
+    }
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'def'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+protocDep = "com.google.protobuf:protoc:$proto_version"
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:$proto_version"
+}
