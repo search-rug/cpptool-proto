@@ -22,3 +22,7 @@ message FriendRelation {
         Type type_friend = 3;
     }
 }
+
+message InputSwitch {
+    required string file_path = 1;
+}

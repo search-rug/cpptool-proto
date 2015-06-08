@@ -6,7 +6,7 @@ import "base.proto"; //TypeDefinition, IsolatedContextDefinition
 import "vars.proto"; //Var, ClassVar
 import "funcs.proto"; //FunctionDef, ClassFunctionDef
 import "classes.proto"; //RecordDef, EnumDef, CxxRecordDef
-import "misc.proto"; //IncludeRelation, TypeDef, FriendRelation
+import "misc.proto"; //IncludeRelation, TypeDef, FriendRelation, InputSwitch
 import "tmpl.proto"; //TemplateParam, Template
 
 message Envelope {
@@ -25,6 +25,7 @@ message Envelope {
         FriendRelation friend = 12;
         Template tmpl = 13;
         TemplateParam tmpl_param = 14;
+        InputSwitch input = 15;
     }
 }
 
