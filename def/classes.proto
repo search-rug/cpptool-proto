@@ -11,6 +11,16 @@ message RecordDef {
     
     // Export typeid for resolving
     required Type internal_type = 3;
+
+    enum Variant {
+        UNKNOWN = 0;
+        CLASS = 1;
+        STRUCT = 2;
+        UNION = 3;
+    }
+
+    // Record variant
+    required Variant variant = 4;
 }
 
 message CxxRecordDef {
