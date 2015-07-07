@@ -1,14 +1,16 @@
-apply plugin: 'com.google.protobuf'
-
 buildscript {
     ext.proto_version = '2.6.1'
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.4.1'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.5.0'
     }
 }
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'com.google.protobuf'
 
 sourceSets {
     main {
@@ -22,8 +24,12 @@ repositories {
     mavenCentral()
 }
 
-protocDep = "com.google.protobuf:protoc:$proto_version"
-generatedFileDir = "${projectDir}/src"
+protobuf {
+  protoc {
+    artifact = "com.google.protobuf:protoc:$proto_version"
+  }
+  generatedFilesBaseDir = "${projectDir}/src"
+}
 
 dependencies {
     compile "com.google.protobuf:protobuf-java:$proto_version"
