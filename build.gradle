@@ -8,9 +8,22 @@ buildscript {
     }
 }
 
+repositories {
+    mavenCentral()
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'com.google.protobuf'
+
+dependencies {
+    compile "com.google.protobuf:protobuf-java:$proto_version"
+}
+
+
+//
+// Protobuf configuration
+//
 
 sourceSets {
     main {
@@ -20,10 +33,6 @@ sourceSets {
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
 protobuf {
   protoc {
     artifact = "com.google.protobuf:protoc:$proto_version"
@@ -31,6 +40,9 @@ protobuf {
   generatedFilesBaseDir = "${projectDir}/src"
 }
 
-dependencies {
-    compile "com.google.protobuf:protobuf-java:$proto_version"
-}
+
+//
+// Intellij Idea configuration
+//
+
+tasks['idea'].dependsOn 'build'
