@@ -1,11 +1,11 @@
 syntax = "proto2";
 package ct.proto;
-option java_package = "nl.rug.search.proto";
+option java_package = "nl.rug.search.cpptool.proto";
 
 import "base.proto"; //TypeDefinition, IsolatedContextDefinition
-import "vars.proto"; //Var, ClassVar
+import "vars.proto"; //Var, Field
 import "funcs.proto"; //FunctionDef, ClassFunctionDef
-import "classes.proto"; //RecordDef, EnumDef, CxxRecordDef
+import "classes.proto"; //RecordDef, EnumDef, CxxRecordDef, CxxRecordParent
 import "misc.proto"; //IncludeRelation, TypeDef, FriendRelation, InputSwitch
 import "tmpl.proto"; //TemplateParam, Template
 
@@ -13,19 +13,20 @@ message Envelope {
     oneof content {
         IncludeRelation include = 1;
         FunctionDef func = 2;
-        ClassFunctionDef c_func = 3;
+        CxxFunctionDef cxx_func = 3;
         TypeDef tdef = 4;
-        CxxRecordDef c_record = 5;
-        RecordDef record = 6;
-        EnumDef enum_def = 7;
-        Var var = 8;
-        ClassVar c_var = 9;
-        TypeDefinition type = 10;
-        IsolatedContextDefinition iso_context = 11;
-        FriendRelation friend = 12;
-        Template tmpl = 13;
-        TemplateParam tmpl_param = 14;
-        InputSwitch input = 15;
+        CxxRecordDef cxx_record = 5;
+        CxxRecordParent cxxr_parent = 6;
+        RecordDef record = 7;
+        EnumDef enum_def = 8;
+        Var var = 9;
+        Field field = 10;
+        TypeDefinition type = 11;
+        IsolatedContextDefinition iso_context = 12;
+        FriendRelation friend = 13;
+        Template tmpl = 14;
+        TemplateParam tmpl_param = 15;
+        InputSwitch input = 16;
     }
 }
 

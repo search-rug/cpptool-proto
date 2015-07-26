@@ -1,6 +1,6 @@
 syntax = "proto2";
 package ct.proto;
-option java_package = "nl.rug.search.proto";
+option java_package = "nl.rug.search.cpptool.proto";
 
 message SourceRange {
     message SourceLocation {
@@ -62,4 +62,11 @@ message Type {
     // Modifiers are ordered depending on their syntactic ordered
     // int *& == [REFERENCE, POINTER] to int, aka reference to pointer of int
     repeated Modifier modifiers = 2;
+}
+
+enum Access {
+    UNKNOWN = 0;
+    PUBLIC = 1;
+    PROTECTED = 2;
+    PRIVATE = 3;
 }

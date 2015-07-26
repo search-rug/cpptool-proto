@@ -1,6 +1,6 @@
 syntax = "proto2";
 package ct.proto;
-option java_package = "nl.rug.search.proto";
+option java_package = "nl.rug.search.cpptool.proto";
 
 import "base.proto";
 
@@ -20,8 +20,10 @@ message Var {
     required VarKind kind = 3;
 }
 
-message ClassVar {
+message Field {
     required Var base = 1;
     
     required Type parent = 2;
+
+    required Access access = 3;
 }

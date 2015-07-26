@@ -1,6 +1,6 @@
 syntax = "proto2";
 package ct.proto;
-option java_package = "nl.rug.search.proto";
+option java_package = "nl.rug.search.cpptool.proto";
 
 import "base.proto";
 
@@ -14,7 +14,7 @@ message FunctionDef {
     //NOTE: Parameters are emitted separately
 }
 
-message ClassFunctionDef {
+message CxxFunctionDef {
     required FunctionDef base = 1;
     
     required Type parent = 2;
@@ -22,4 +22,6 @@ message ClassFunctionDef {
     required bool virtual = 3;
     
     required bool static = 4;
+
+    required Access access = 5;
 }

@@ -4,7 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- New elements regarding access type (i.e., private, public, protected)
+- Enumaration for access specification.
+- Message for class parents (**CxxRecordParent**).
+- Field **access** to message **CxxFunctionDef**.
+- Field **access** to message **Field**.
+
+### Changed
+- Field **parent** (in **CxxRecord**) to new parent message (**CxxRecordParent**).
+- Option **java_package** in all files to "nl.rug.search.cpptool.proto".
+- Message **ClassFunctionDef** to **CxxFunctionDef**.
+- Message **ClassVar** to **Field**.
 
 ## 0.1.0 - 2015-07-24
 ### Added
