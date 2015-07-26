@@ -20,8 +20,10 @@ message CxxFunctionDef {
     required Type parent = 2;
     
     required bool virtual = 3;
-    
-    required bool static = 4;
 
-    required Access access = 5;
+    required bool pure_virtual = 4;
+    
+    required bool static = 5;
+
+    required Access access = 6;
 }

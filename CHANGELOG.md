@@ -4,13 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Enumaration for access specification.
-- Message for class parents (**CxxRecordParent**).
-- Field **access** to message **CxxFunctionDef**.
-- Field **access** to message **Field**.
+- Support for exporting access specifiers:
+    + Enumeration of access types.
+    + Message for class parents (**CxxRecordParent**).
+    + Field **access** to message **CxxFunctionDef**.
+    + Field **access** to message **Field**.
+- Support for exporting pure virtual methods:
+    + Field **pure_virtual** to message **CxxFunctionDef**.
 
 ### Changed
-- Field **parent** (in **CxxRecord**) to new parent message (**CxxRecordParent**).
+- For supporting access specifiers:
+    + Field **parent** (in **CxxRecord**) to new parent message (**CxxRecordParent**).
 - Option **java_package** in all files to "nl.rug.search.cpptool.proto".
 - Message **ClassFunctionDef** to **CxxFunctionDef**.
 - Message **ClassVar** to **Field**.
